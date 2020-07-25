@@ -1,6 +1,6 @@
 ---
 - name: Create New User
-  hosts: docker
+  hosts: all
   gather_facts: true
   become: true
   tasks:
