@@ -1,6 +1,7 @@
 # Ansible_create_user
 
 Add hosts to inventory
+
 Change ssh_user if needed
 Add 
 - user_name 
