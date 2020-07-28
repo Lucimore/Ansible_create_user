@@ -8,6 +8,7 @@ Add
 - user_name 
 - user_key      to /group_vars/adduser
 
-launch
+Launch
 
-./run.sh - write ssh passwd
+./ping.sh       to check hosts  availability
+./run.sh
