@@ -11,13 +11,17 @@
       group:
         name: cta
         state: present
-
+        gid: 9999
+    
+        
     - name: Allow CTA group to have passwordless sudo
       lineinfile:
-        path: /etc/sudoers
+        path: /etc/sudoers.d/cta
         state: present
+        mode: 0440
         regexp: '^%cta'
         line: '%cta ALL=(ALL) NOPASSWD: ALL'
+        create: yes
         validate: 'visudo -cf %s'
 
     - name: Create a User
@@ -25,12 +29,7 @@
         name: "{{ user_name }}"
         state: present
         shell: /bin/bash
-     
-    - name: Add New User to cta group
-      user:
-        name: "{{ user_name }}"
-        groups: "{{ admin_group }}"
-        append: yes
+        group: cta
 
     - name: Set up authorized keys for a New User
       authorized_key:
