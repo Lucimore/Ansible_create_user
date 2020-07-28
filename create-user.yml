@@ -38,9 +38,9 @@
       
     - name: Add Comment    
       lineinfile:
-          path: /home/{{ user_name }}/.ssh/authorized_keys
-          state: present
-          insertbefore: BOF
-          line: '# Created by Ansible'
+        path: /home/{{ user_name }}/.ssh/authorized_keys
+        state: present
+        insertbefore: BOF
+        line: '# Created by Ansible'
 
 ...
