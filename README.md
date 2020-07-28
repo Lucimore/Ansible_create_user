@@ -4,9 +4,9 @@ Add hosts to inventory
 
 Change ssh_user if needed
 
-Add 
+Add to /group_vars/add_user
 - user_name 
-- user_key      to /group_vars/adduser
+- user_key      
 
 Launch
 
