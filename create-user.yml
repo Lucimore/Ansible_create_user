@@ -19,7 +19,7 @@
         state: present
         mode: 0440
         regexp: '^%cta'
-        line: '%cta ALL=(ALL) NOPASSWD: ALL'
+        line: '%cta ALL=(ALL) NOPASSWD:ALL'
         create: yes
         validate: 'visudo -cf %s'
 
