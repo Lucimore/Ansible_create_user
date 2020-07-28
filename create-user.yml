@@ -13,8 +13,7 @@
         state: present
         gid: 9999
     
-        
-    - name: Allow CTA group to have passwordless sudo
+    - name: Create a file in sudoers.d and allow CTA group to have passwordless sudo
       lineinfile:
         path: /etc/sudoers.d/cta
         state: present
@@ -29,13 +28,8 @@
         name: "{{ user_name }}"
         state: present
         shell: /bin/bash
-<<<<<<< HEAD
         group: cta
 
-=======
-        group: "{{ admin_group }}"
-     
->>>>>>> 1fe989fd6869a26b97582fb8666356459bdbafe7
     - name: Set up authorized keys for a New User
       authorized_key:
         user: "{{ user_name }}"
