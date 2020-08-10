@@ -12,7 +12,7 @@
       ignore_errors: yes
 
     - name: Add cta to sudoers if not exists
-      raw: "if [ ! -f /etc/sudoers.d/cta ]; then echo '%cta ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/cta; fi"
+      raw: "if [ ! -f /etc/sudoers.d/cta ]; then echo '%cta ALL=(ALL) NOPASSWD:ALL' > /etc/sudoers.d/cta; fi"
 
     - name: Create New User and add to cta group
       raw: useradd -m -g cta {{ user_name }}
