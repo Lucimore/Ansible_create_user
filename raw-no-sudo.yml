@@ -1,0 +1,20 @@
+---
+- name: Create New User
+  hosts: all
+  gather_facts: no
+  become: true
+  tasks:
+    - include_vars:
+        file: group_vars/add_user
+
+    - name: Create New User
+      raw: useradd -m {{ user_name }}
+
+    - name: Add ssh user key
+      raw: mkdir /home/{{ user_name }}/.ssh;
+           echo {{ user_key }} > /home/{{ user_name }}/.ssh/authorized_keys;
+           chmod 600 /home/{{ user_name }}/.ssh/authorized_keys;
+           chmod 700 /home/{{ user_name }}/.ssh;
+           chown -R {{ user_name }}:{{ user_name }} /home/{{ user_name }}/.ssh;
+
+...
