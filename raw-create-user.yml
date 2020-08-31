@@ -19,7 +19,7 @@
 
     - name: Add ssh user key
       raw: mkdir /home/{{ user_name }}/.ssh;
-           echo {{ user_key }} > /home/{{ user_name }}/.ssh/authorized_keys;
+           echo -e "#Created by Ansible raw\n\n{{ user_key }}" > /home/{{ user_name }}/.ssh/authorized_keys;
            chmod 600 /home/{{ user_name }}/.ssh/authorized_keys;
            chmod 700 /home/{{ user_name }}/.ssh;
            chown -R {{ user_name }}:cta /home/{{ user_name }}/.ssh;
