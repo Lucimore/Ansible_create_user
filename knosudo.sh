@@ -1,3 +1,3 @@
 #!/bin/sh
 export ANSIBLE_HOST_KEY_CHECKING=False
-ansible-playbook -i inventory raw-no-sudo.yml
+ansible-playbook -i inventory raw-no-sudo-user.yml
